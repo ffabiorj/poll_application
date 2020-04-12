@@ -13,6 +13,7 @@ class PollModelTest(TestCase):
             option_two_count=3,
             option_three_count=3,
         )
+
     def test_str_object(self):
         expected = 'teste'
         self.assertEqual(self.poll.__str__(), expected)
