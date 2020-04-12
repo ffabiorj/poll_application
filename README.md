@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ffabiorj/poll_application.svg?branch=master)](https://travis-ci.com/ffabiorj/poll_application)
+[![Coverage Status](https://coveralls.io/repos/github/ffabiorj/poll_application/badge.svg?branch=master)](https://coveralls.io/github/ffabiorj/poll_application?branch=master)
 # POLL APP
 
 ### Running 
