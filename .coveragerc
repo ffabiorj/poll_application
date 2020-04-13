@@ -1,3 +1,2 @@
 [run]
-source = poll_app/
-omit = .venv/* asgi.py wsgi.py
+omit = .venv/* 
