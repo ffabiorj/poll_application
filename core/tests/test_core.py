@@ -46,18 +46,24 @@ class CoreTest(TestCase):
 
     def test_view_vote(self):
         response1 = self.client.post(
-            r("vote", pk=(self.poll.id)), data={"poll": "option1"}
+            r("vote", pk=self.poll.id), data={"poll": "option1"}
         )
         response2 = self.client.post(
-            r("vote", pk=(self.poll.id)), data={"poll": "option2"}
+            r("vote", pk=self.poll.id), data={"poll": "option2"}
         )
         response3 = self.client.post(
-            r("vote", pk=(self.poll.id)), data={"poll": "option3"}
+            r("vote", pk=self.poll.id), data={"poll": "option3"}
         )
 
         self.assertEqual(302, response1.status_code)
         self.assertEqual(302, response2.status_code)
         self.assertEqual(302, response3.status_code)
+
+    def test_view_vote_error_400(self):
+        response = self.client.post(
+            r("vote", pk=self.poll.id), data={'poll': 'sdfsf'})
+
+        self.assertEqual(200, response.status_code)
 
     def test_view_vote_status_code_200(self):
         response = self.client.get(r("vote", pk=(self.poll.id)))

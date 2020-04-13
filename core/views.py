@@ -28,6 +28,7 @@ def vote(request, pk):
     poll = get_object_or_404(Poll, pk=pk)
     if request.method == "POST":
         selected = request.POST["poll"]
+        # import ipdb; ipdb.set_trace()
         if selected == "option1":
             poll.option_one_count += 1
         elif selected == "option2":
@@ -35,7 +36,7 @@ def vote(request, pk):
         elif selected == "option3":
             poll.option_three_count += 1
         else:
-            return HttpResponse(400, "Invalid form")
+            return HttpResponse(200, "Invalid form")
 
         poll.save()
 
